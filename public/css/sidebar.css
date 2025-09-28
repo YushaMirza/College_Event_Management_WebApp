@@ -1,0 +1,175 @@
+  :root {
+            --lightest: #B4D9F2;
+            --light: #6EB6E8;
+            --medium-light: #0386D4;
+            --medium: #0386D4;
+            --medium-dark: #20497D;
+            --dark: #001F48;
+            --shadow: rgba(32, 73, 125, 0.2);
+            --transition: all 0.3s ease;
+        }
+html{
+    overflow-x: hidden;
+}
+
+/* Sidebar */
+#sidebar {
+    width: 350px !important;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #2c3e50 0%, #1a252f 100%);
+    color: #ffffff;
+    transition: all 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    overflow-y: auto;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: larger;
+    overflow-x: hidden;
+}
+
+
+@media(max-width:1250px){
+
+.logoutbtn{
+    display: block !important;
+}
+}
+
+.logoutbtn:hover{
+    color: #001F48 !important;
+}
+
+#sidebar.closed {
+    margin-left: -350px !important;
+}
+
+#sidebar ul,
+#sidebar .sidebar-header {
+    display: block;
+}
+
+
+#sidebarToggle {
+    display: none !important;
+}
+
+/* Close button (inside sidebar) */
+#sidebarToggleClose {
+    position: absolute;
+    top: 10px;
+    right:0;
+    z-index: 1100;
+  background: #4375b5;
+}
+
+/* Open button (navbar) */
+#sidebarToggleOpen {
+    position: relative;
+    z-index: 1100;
+}
+
+/* Default state: sidebar open → hide the open button */
+#sidebarToggleOpen {
+    display: none;
+}
+
+/* Sidebar closed */
+#sidebar.closed {
+    margin-left: -280px;
+}
+
+/* Sidebar closed → show open button (navbar one) */
+#sidebar.closed ~ nav .container-fluid #sidebarToggleOpen {
+    display: inline-block;
+}
+
+/* Sidebar closed → hide close button (inside sidebar) */
+#sidebar.closed #sidebarToggleClose {
+    display: none;
+}
+
+@media(max-width:550px){
+    .date-display{
+    display: none !important;
+}
+}
+
+
+
+
+#sidebar .sidebar-header {
+    padding: 20px 25px;
+    background:#20497D;
+    border-bottom: 1px solid #20497D;
+}
+
+nav-item {
+    margin-left: 15px !important;
+}
+
+#sidebar ul {
+    width: 100%;              /* ul ko sidebar ki full width do */
+    padding-left: 0;          /* Bootstrap ka default padding remove */
+    margin: 0;  
+    justify-items: center;              /* extra margin remove */
+}
+
+#content {
+    margin-left: 280px;
+    width: calc(100% - 280px);
+}
+
+#sidebar ul li {
+    width: 100%;              /* har li full width lega */
+}
+
+#sidebar ul li a {
+    padding: 12px 5px;
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+    width: 100%;
+    white-space: normal;
+    word-wrap: break-word;
+    gap: 20px !important;
+}
+#sidebar ul li a i {
+    margin-right: 10px; 
+}
+#sidebar ul li a:hover,
+#sidebar ul li.active > a {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-left-color: #20497D;
+}
+
+/* Content */
+#content {
+    margin-left: 280px;
+    padding: 1.5rem;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+    background: #f5f7fa;
+    width: calc(100% - 280px);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    /* #sidebar {
+        transform: translateX(-100%);
+    }
+    #sidebar.active {
+        transform: translateX(0);
+    } */
+    #content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
